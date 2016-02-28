@@ -7,15 +7,16 @@ import java.util.*;
 
 public class Fibb {
 
-    int[] fibbon(int num) {
-        int tab[] = new int[num];
-        tab[0]=1;
-        tab[1]=1;
+    void fibbon(int num) {
 
-        for(int i=2; i<num; i++) {
-            tab[i] = tab[i - 1] + tab[i - 2];
+        int a=0;
+        int b=1;
+
+        for(int i=0; i<num; i++) {
+            System.out.print(b + " ");
+            b +=a;
+            a = b-a;
         }
-        return tab;
     }
 
     //recursive Fibb sequence is much much slower
@@ -28,20 +29,22 @@ public class Fibb {
 
     public static void main(String[] args)
     {
-        long startTime = System.currentTimeMillis();
-        int k = Integer.parseInt(args[0]);
-        int tab2[]= new int[k];
-        Fibb object = new Fibb();
-        tab2=object.fibbon(k);
 
-        int i =0;
-        while(i<k) {
-            System.out.print(tab2[i] + " ");
-            i++;
-        }
+        int k = Integer.parseInt(args[0]);
+        Fibb object = new Fibb();
+
+        long startTime = System.currentTimeMillis();
+        object.fibbon(k);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime-startTime;
-        System.out.println("\n" + totalTime);
+        System.out.println("\nTime of  iterative alogirthm: " + totalTime + " ms");
+
+        long startTime2 = System.currentTimeMillis();
+        for(int l=0; l<k; l++)
+                System.out.print(object.RecFibb(l) + " ");
+        long endTime2 = System.currentTimeMillis();
+        long totalTime2 = endTime2-startTime2;
+        System.out.println("\nTime of recursive alogirthm: " + totalTime2 + " ms");
     }
 }
 
