@@ -3,15 +3,11 @@
  */
 
 import java.util.*;
-
-
 public class Fibb {
-
+    //iterative Fibb sequence
     void fibbon(int num) {
-
         int a=0;
         int b=1;
-
         for(int i=0; i<num; i++) {
             System.out.print(b + " ");
             b +=a;
@@ -29,7 +25,6 @@ public class Fibb {
 
     public static void main(String[] args)
     {
-
         int k = Integer.parseInt(args[0]);
         Fibb object = new Fibb();
 
