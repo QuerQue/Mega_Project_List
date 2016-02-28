@@ -1,2 +1,3 @@
 # Mega_Project_List
-solutions to Mega Project List with Java
+my solutions to Mega Project List  
+written in Java
