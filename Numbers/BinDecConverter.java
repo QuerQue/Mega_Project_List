@@ -19,6 +19,14 @@ public class BinDecConverter {
         return list;
     }
 
+    int BinToDec(String num){
+        int result=0;
+        for(int i=num.length()-1; i>=0; i--){
+            result+=(num.charAt(i)-'0')*Math.pow(2, num.length()-i-1);
+        }
+        return  result;
+    }
+
     void PrintList(List lista){
         for(int i=0; i<lista.size(); i++)
             System.out.print(lista.get(i));
@@ -32,7 +40,7 @@ public class BinDecConverter {
         List<Integer> lista;
 
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter decimal number to convert to binary: ");
+        System.out.print("\nEnter decimal number to convert to binary: ");
         dec = in.nextInt();
 
         lista=object.DecToBin(dec);
@@ -40,8 +48,19 @@ public class BinDecConverter {
         object.PrintList(lista);
 
 
+        //##############################################
+        int result;
+        System.out.print("\nEnter binary number to convert to decimal: ");
+        String bin;
+        bin = in.next();
+        result=object.BinToDec(bin);
+
+        System.out.print(result);
+
 
 
     }
 
 }
+
+
